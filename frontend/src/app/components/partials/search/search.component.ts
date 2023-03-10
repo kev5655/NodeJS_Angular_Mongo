@@ -11,13 +11,13 @@ export class SearchComponent {
 
   constructor(activatedRoute:ActivatedRoute, private router:Router){
     activatedRoute.params.subscribe((params) => {
-      if(params.searchTerm) this.searchTerm = this.searchTerm;
+      if(params.searchTerm) this.searchTerm = params.searchTerm;
     })
   }
 
   search(term:string): void {
     if(term){
-      this.router.navigateByUrl('/search/' + term);
+      this.router.navigateByUrl('/search/' + term).then();
     }
   }
 

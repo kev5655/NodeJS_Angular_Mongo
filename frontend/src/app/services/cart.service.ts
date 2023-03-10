@@ -26,13 +26,13 @@ export class CartService {
     this.setCartToLocalStorage();
   }
 
-  changeQuantity(foodId: string, qunatity: number){
+  changeQuantity(foodId: string, quantity: number){
     let cartItem =this.cart.items
       .find(item => item.food.id === foodId);
     if(!cartItem) return;
 
-    cartItem.quantity = qunatity;
-    cartItem.price = qunatity * cartItem.food.price;
+    cartItem.quantity = quantity;
+    cartItem.price = quantity * cartItem.food.price;
     this.setCartToLocalStorage();
   }
 
